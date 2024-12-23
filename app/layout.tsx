@@ -41,7 +41,7 @@ const sfPRO = localFont({
 
 const siteUrl = "https://dratati.vercel.app";
 const description = "Especialista em odontopediatria, dedicada a criar experiências positivas e sorrisos saudáveis. No consultório da Dra. Tatiana, cada atendimento é personalizado, combinando técnica moderna com um ambiente acolhedor, proporcionando aos pequenos pacientes um cuidado especial desde a primeira infância.";
-const title = "Dra. Tatiana - Odontopediatria Especializada";
+const title = "Abner Santana";
 
 export const metadata: Metadata = {
   title,
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
         url: '/shared.png',
         width: 1200,
         height: 630,
-        alt: 'Dra. Tatiana - Odontopediatria Especializada',
+        alt: 'Abner Santana',
       },
     ],
     locale: 'pt_BR',

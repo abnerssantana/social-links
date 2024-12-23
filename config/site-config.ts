@@ -66,8 +66,8 @@ const GridItems: GridItemInterface[] = [
     description:
       "Acompanhe meu Instagram para dicas de saúde bucal e novidades do consultório.",
     buttonTitle: "Seguidores",
-    buttonLink: "https://www.instagram.com/dratatianasocio/",
-    buttonSecondaryText: "1.998",
+    buttonLink: "https://www.instagram.com/abnerssantana/",
+    buttonSecondaryText: "2500",
     color: "rgba(104, 60, 190, 1)",
     backgroundColor: {
       light: "#f7e3fc",
@@ -135,8 +135,8 @@ const GridItems: GridItemInterface[] = [
 ];
 
 export const siteConfig = {
-  creator: "Dra. Tatiana",
-  title: "Odontopediatra 🐻",
+  creator: "Abner Santana",
+  title: "Correrdor, YouTuber e Tecnologia",
   bio: "Cada sorriso é único e merece um cuidado especial, combinando técnica moderna com um atendimento acolhedor e gentil.",
   location: "Navarro Building. Sala 115",
   timeweek: "Seg-Sex: 9h-19h",
