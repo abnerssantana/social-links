@@ -44,10 +44,10 @@ const GridItems: GridItemInterface[] = [
     buttonTitle: "Conectar",
     buttonLink: "https://discord.gg/pGcDZjhRry",
     buttonSecondaryText: "",
-    color: "#5865F2",
+    color: "#1E88E5",
     backgroundColor: {
-      light: "#E8EAFF",
-      dark: "#1A1C2A",
+      light: "#E3F2FD",
+      dark: "#0D47A1",
     },
   },
   {
@@ -59,10 +59,10 @@ const GridItems: GridItemInterface[] = [
     buttonTitle: "Seguir",
     buttonLink: "https://www.instagram.com/abnerssantana/",
     buttonSecondaryText: "@abnerssantana",
-    color: "#E4405F",
+    color: "#FF5722",
     backgroundColor: {
-      light: "#FFE8ED",
-      dark: "#2A1A1F",
+      light: "#FBE9E7",
+      dark: "#D84315",
     },
   },
   {
@@ -83,10 +83,10 @@ const GridItems: GridItemInterface[] = [
     type: "project",
     title: "Magic Training - Sua plataforma de treinos",
     icon: "running",
-    color: "#000000",
+    color: "#FFFFFF",
     backgroundColor: {
-      light: "#FFB800",
-      dark: "#FFB800",
+      light: "#1E88E5",  // Azul das mangas
+      dark: "#1E88E5",
     },
     buttonLink: "https://magictraining.run",
   },
@@ -95,10 +95,10 @@ const GridItems: GridItemInterface[] = [
     type: "project",
     title: "Loja - Vivendo a Corrida",
     icon: "shop",
-    color: "#000000",
+    color: "#FFFFFF",
     backgroundColor: {
-      light: "#00C853",
-      dark: "#00C853",
+      light: "#FF5722",  // Laranja da camiseta
+      dark: "#FF5722",
     },
     buttonLink: "https://vivendoacorrida.com",
   },
@@ -107,10 +107,10 @@ const GridItems: GridItemInterface[] = [
     type: "project",
     title: "Me siga no Strava",
     icon: "strava",
-    color: "#000000",
+    color: "#FFFFFF",
     backgroundColor: {
-      light: "#FF4B4B",
-      dark: "#FF4B4B",
+      light: "#212121",  // Preto do shorts
+      dark: "#212121",
     },
     buttonLink: "https://strava.com/athletes/abnerssantana",
   },

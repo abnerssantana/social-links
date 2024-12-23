@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#FF4B4B",  // Tom principal vermelho energético
+        primary: "#FF5722",  // Laranja vibrante da camiseta
         background: {
           light: "#F5F5F5",  // Fundo claro clean
           dark: "#1A1A1A",   // Fundo escuro profundo
@@ -23,9 +23,9 @@ module.exports = {
           dark: "#404040",   // Borda escura suave
         },
         accent: {
-          primary: "#FF4B4B",    // Vermelho energético
-          secondary: "#FFB800",  // Amarelo dinâmico
-          tertiary: "#00C853",   // Verde velocidade
+          primary: "#FF5722",    // Laranja da camiseta
+          secondary: "#1E88E5",  // Azul das mangas
+          tertiary: "#212121",   // Preto do shorts
         }
       },
       fontFamily: {
