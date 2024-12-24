@@ -151,7 +151,7 @@ const ImageComparison: React.FC<Props> = ({ item }) => {
           <div className="flex flex-wrap items-center gap-2">
             {item.equipments.map((equipment, index) => (
               <div
-                className="px-2 py-1 text-[12px] font-normal bg-gray-200 rounded-lg dark:bg-neutral-700"
+                className="px-2 py-1 text-[10px] sm:text-sm font-normal bg-gray-200 rounded-lg dark:bg-neutral-700"
                 key={index}
               >
                 {equipment.title}

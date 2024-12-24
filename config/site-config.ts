@@ -82,7 +82,7 @@ const GridItems: GridItemInterface[] = [
     color: "#0073cc",
   },
   {
-    layout: "2x8",
+    layout: "2x6",
     type: "equipment",
     title: "Conquistas e Recordes Pessoais",
     description: "Evolução constante e dedicação aos treinos",
@@ -95,7 +95,7 @@ const GridItems: GridItemInterface[] = [
     ],
   },
   {
-    layout: "2x8",
+    layout: "2x6",
     type: "equipment",
     icon: "shop",
     buttonTitle: "Comprar Agora",
@@ -112,13 +112,14 @@ const GridItems: GridItemInterface[] = [
     ],
   },
   {
-    layout: "2x6",
+    layout: "1x6",
     type: "equipment",
     title: "Treino intervalado na pista",
+    description: "O treino intervalado é uma abordagem eficaz para melhorar",
     video: "/pista.mov",
   },
   {
-    layout: "2x6",
+    layout: "1x6",
     type: "equipment",
     title: "Dicas Valiosas de Treinamento",
     description: "Aprenda técnicas avançadas e melhore seu desempenho",
