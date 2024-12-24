@@ -131,9 +131,9 @@ const ImageComparison: React.FC<Props> = ({ item }) => {
   const content = (
     <div className="flex flex-col w-full h-full overflow-hidden rounded-lg">
       {renderMedia()}
-      <div className="relative z-20 w-full p-6 space-y-3 md:p-8 bg-white dark:bg-neutral-900">
+      <div className="relative z-20 w-full p-4 space-y-3 md:p-4 bg-white dark:bg-neutral-900">
         <div className="flex items-center justify-between gap-4">
-          <div className="text-sm font-normal text-black dark:text-white">{item.title}</div>
+          <div className="text-base font-normal text-black dark:text-white">{item.title}</div>
           {item.buttonTitle && (
             <Button
               text={item.buttonTitle}
@@ -148,10 +148,10 @@ const ImageComparison: React.FC<Props> = ({ item }) => {
           </div>
         )}
         {item.equipments && item.equipments.length > 0 && (
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2">
             {item.equipments.map((equipment, index) => (
               <div
-                className="px-2 py-1 text-sm font-normal bg-gray-200 rounded-lg dark:bg-neutral-700"
+                className="px-2 py-1 text-[12px] font-normal bg-gray-200 rounded-lg dark:bg-neutral-700"
                 key={index}
               >
                 {equipment.title}

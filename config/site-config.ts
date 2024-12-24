@@ -82,7 +82,7 @@ const GridItems: GridItemInterface[] = [
     color: "#0073cc",
   },
   {
-    layout: "2x6",
+    layout: "2x8",
     type: "equipment",
     title: "Conquistas e Recordes Pessoais",
     description: "Evolução constante e dedicação aos treinos",
@@ -95,7 +95,7 @@ const GridItems: GridItemInterface[] = [
     ],
   },
   {
-    layout: "2x6",
+    layout: "2x8",
     type: "equipment",
     icon: "shop",
     buttonTitle: "Comprar Agora",
