@@ -2,12 +2,17 @@ import Link from "next/link";
 import Button from "../button";
 import { GridItemInterface } from "./../../config/site-config";
 import { IconType } from "react-icons";
-import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaYoutube, FaDiscord, FaGithub, FaStrava, FaMagic } from "react-icons/fa";
 
 const Social = ({ item }: { item: GridItemInterface }) => {
   const iconComponents: { [key: string]: IconType } = {
     whatsapp: FaWhatsapp,
     instagram: FaInstagram,
+    youtube: FaYoutube,
+    discord: FaDiscord,
+    github: FaGithub,
+    strava: FaStrava,
+    magic: FaMagic
   };
 
   const IconComponent = item.icon && iconComponents[item.icon];
@@ -33,8 +38,10 @@ const Social = ({ item }: { item: GridItemInterface }) => {
       {/* Content */}
       <div className="mt-1">
         <div className="@lg:text-lg font-semibold line-clamp-1">
-          {item.title}
+          {item.title} <span className="ml-1 text-sm font-normal text-neutral-600 dark:text-slate-200">{item.username}</span>
         </div>
+       
+
         {item.description && (
           <div className="mt-1 mb-2 text-sm text-neutral-600 dark:text-neutral-50 line-clamp-2">
             {item.description}

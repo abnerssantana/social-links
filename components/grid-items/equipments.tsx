@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { GridItemInterface } from '@/config/site-config';
 import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
+import Button from '../button';
+import Link from 'next/link';
 
 interface Props {
   item: GridItemInterface;
@@ -55,7 +57,7 @@ const ImageComparison: React.FC<Props> = ({ item }) => {
       case '2x8':
         return 'h-[650px]';
       case '2x6':
-          return 'h-[480px]';  
+        return 'h-[480px]';  
       case '2x4':
         return 'h-[400px]';
       case '2x2':
@@ -126,11 +128,25 @@ const ImageComparison: React.FC<Props> = ({ item }) => {
     return null;
   };
 
-  return (
+  const content = (
     <div className="flex flex-col w-full h-full overflow-hidden rounded-lg">
       {renderMedia()}
       <div className="relative z-20 w-full p-6 space-y-3 md:p-8 bg-white dark:bg-neutral-900">
-        <div className="text-sm font-normal text-black dark:text-white">{item.title}</div>
+        <div className="flex items-center justify-between gap-4">
+          <div className="text-sm font-normal text-black dark:text-white">{item.title}</div>
+          {item.buttonTitle && (
+            <Button
+              text={item.buttonTitle}
+              secondaryText={item.buttonSecondaryText}
+              color={item.color || "#000"}
+            />
+          )}
+        </div>
+        {item.description && (
+          <div className="text-sm text-neutral-600 dark:text-neutral-400">
+            {item.description}
+          </div>
+        )}
         {item.equipments && item.equipments.length > 0 && (
           <div className="flex flex-wrap items-center gap-3">
             {item.equipments.map((equipment, index) => (
@@ -145,6 +161,14 @@ const ImageComparison: React.FC<Props> = ({ item }) => {
         )}
       </div>
     </div>
+  );
+
+  return item.buttonLink ? (
+    <Link href={item.buttonLink} target="_blank" className="block h-full">
+      {content}
+    </Link>
+  ) : (
+    content
   );
 };
 

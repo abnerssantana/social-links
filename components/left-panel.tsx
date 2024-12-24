@@ -1,7 +1,7 @@
 "use client";
 
 import { siteConfig } from "@/config/site-config";
-import { Mail, MapPin, CalendarRange } from "lucide-react";
+import { MapPin, CalendarRange } from "lucide-react";
 import Image from "next/image";
 import Footer from "./footer";
 
@@ -18,8 +18,8 @@ const LeftPanel = () => {
             alt="Abner Santana"
             placeholder="blur"
             src="/avatar.jpg"
-            width={130}
-            height={130}
+            width={140}
+            height={140}
             blurDataURL="/avatar.jpg"
             className="rounded-full"
           />
@@ -36,7 +36,7 @@ const LeftPanel = () => {
               {siteConfig.title}
             </div>
             <h1 className="mt-2 text-4xl font-bold">{siteConfig.creator}</h1>
-            <p className="text-2xl font-light text-neutral-600 dark:text-slate-200">
+            <p className="text-1xl font-light text-neutral-600 dark:text-slate-200">
               {siteConfig.bio}
             </p>
           </div>
@@ -47,15 +47,10 @@ const LeftPanel = () => {
             <CalendarRange size="14" />
             {siteConfig.timeweek}
           </div>
-          <a
-            href={siteConfig.locationLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium bg-surface-light dark:bg-surface-dark border rounded-md border-border-light dark:border-border-dark"
-          >
-            <CalendarRange size="14" />
+          <div className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium bg-surface-light dark:bg-surface-dark border rounded-md border-border-light dark:border-border-dark">
+            <MapPin size="14" />
             {siteConfig.location}
-          </a>
+          </div>
         </div>
         {/* Footer */}
         <div className="hidden mt-6 xl:flex">

@@ -50,7 +50,7 @@ const GridItem = ({ size, children, backgroundColor }: GridItemProps) => {
 
   const bgColor = backgroundColor
     ? (isDark ? backgroundColor.dark : backgroundColor.light)
-    : (isDark ? "#9f86c0" : "#F4D9DD");
+    : (isDark ? "rgb(23, 23, 23)" : "rgb(245 245 245 / var(--tw-bg-opacity, 1))");
 
   return (
     <div
