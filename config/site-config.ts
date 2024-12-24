@@ -38,19 +38,6 @@ export interface GridItemInterface {
 
 const GridItems: GridItemInterface[] = [
   {
-    layout: "2x6",
-    type: "equipment",
-    title: "Conquistas e Recordes Pessoais",
-    description: "Evolução constante e dedicação aos treinos",
-    images: ["/2024/1.jpg", "/2024/2.jpg", "/2024/3.jpg", "/2024/4.jpg"],
-    equipments: [
-      { title: "5K - 14:27" },
-      { title: "10K - 30:49" },
-      { title: "21K - 1:11:23" },
-      { title: "42K - 2:30:44" },
-    ],
-  },
-  {
     layout: "2x2",
     type: "social",
     title: "Youtube",
@@ -93,6 +80,19 @@ const GridItems: GridItemInterface[] = [
     buttonLink: "https://magictraining.run",
     buttonSecondaryText: "",
     color: "#0073cc",
+  },
+  {
+    layout: "2x6",
+    type: "equipment",
+    title: "Conquistas e Recordes Pessoais",
+    description: "Evolução constante e dedicação aos treinos",
+    images: ["/2024/1.jpg", "/2024/2.jpg", "/2024/3.jpg", "/2024/4.jpg"],
+    equipments: [
+      { title: "5K - 14:27" },
+      { title: "10K - 30:49" },
+      { title: "21K - 1:11:23" },
+      { title: "42K - 2:30:44" },
+    ],
   },
   {
     layout: "2x6",
