@@ -38,7 +38,7 @@ export interface GridItemInterface {
 
 const GridItems: GridItemInterface[] = [
   {
-    layout: "2x8",
+    layout: "2x6",
     type: "equipment",
     title: "Conquistas e Recordes Pessoais",
     description: "Evolução constante e dedicação aos treinos",
