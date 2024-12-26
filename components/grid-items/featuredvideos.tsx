@@ -20,35 +20,23 @@ const FeaturedVideos = ({ item }: { item: GridItemInterface }) => {
       views: "10k visualizações",
     },
     {
+        title: "Ritmo de Limiar: Guia Definitivo",
+        link: "https://youtu.be/7Iyy9Uq4YZk",
+        thumbnail: "/videos/limiar.jpg",
+        views: "4k visualizações",
+      },
+    {
       title: "Mente de Corredor: Um Guia para a Corrida Consciente",
       link: "https://youtu.be/cfu-FxRjIDQ",
       thumbnail: "/videos/mente.jpg",
       views: "2.7k visualizações",
     },
     {
-      title: "Tempo de Contato com o Solo",
-      link: "https://youtu.be/b0r_8KL6PNI",
-      thumbnail: "/videos/contato.jpg",
-      views: "2.5k visualizações",
-    },
-    {
-      title: "O segredo dos corredores quenianos",
-      link: "https://youtu.be/AZVo04C0EWU",
-      thumbnail: "/videos/quenia.jpg",
-      views: "12k visualizações",
-    },
-    {
-      title: "O segredo dos corredores quenianos",
-      link: "https://youtu.be/AZVo04C0EWU",
-      thumbnail: "/videos/quenia.jpg",
-      views: "12k visualizações",
-    },
-    {
-      title: "O segredo dos corredores quenianos",
-      link: "https://youtu.be/AZVo04C0EWU",
-      thumbnail: "/videos/quenia.jpg",
-      views: "12k visualizações",
-    },
+        title: "Tolerância ao Esforço: Por que alguns corredores aguentam mais?",
+        link: "https://youtu.be/REJadzi0tIo",
+        thumbnail: "/videos/esforco.jpg",
+        views: "2k visualizações",
+      },
     {
       title: "O segredo dos corredores quenianos",
       link: "https://youtu.be/AZVo04C0EWU",
@@ -61,49 +49,49 @@ const FeaturedVideos = ({ item }: { item: GridItemInterface }) => {
     <div className="flex flex-col h-full">
       {/* Header Section */}
       <div className="p-4 border-b border-neutral-200 dark:border-neutral-800">
-        {/* Title and Icon */}
-        <div className="flex items-center gap-3">
-          <div className="p-2 bg-red-600 rounded-lg">
+        <div className="flex gap-3">
+          {/* Icon */}
+          <div className="mt-2 mr-1 p-2 h-fit bg-red-600 rounded-lg">
             <Play size={20} className="text-white" />
           </div>
-          <h2 className="text-lg font-semibold">{item.title}</h2>
+          
+          {/* Title and Description Column */}
+          <div className="flex-1">
+            <h2 className="text-lg font-semibold">{item.title}</h2>
+            {item.description && (
+              <p className="text-[11px] sm:text-sm text-neutral-600 dark:text-neutral-400">
+                {item.description}
+              </p>
+            )}
+          </div>
         </div>
-
-        {/* Description */}
-        {item.description && (
-          <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
-            {item.description}
-          </p>
-        )}
       </div>
 
       {/* Videos List */}
       <div className="flex-1 overflow-y-auto">
         {featuredVideos.map((video, index) => (
-          <Link
+          <Link 
             href={video.link}
             key={index}
-            className="flex items-start gap-3 p-2 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800"
+            className="flex items-start gap-2 px-5 py-2 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800"
             target="_blank"
           >
-            {/* Thumbnail - Ajustado para proporção 16:9 */}
-            <div className="relative flex-shrink-0 w-32 overflow-hidden rounded-lg">
+            {/* Thumbnail - proporção 16:9 */}
+            <div className="relative flex-shrink-0 w-28 sm:w-32 overflow-hidden rounded">
               <div className="pb-[56.25%]">
                 <Image
                   src={video.thumbnail}
                   alt={video.title}
                   fill
                   className="absolute object-cover"
-                  sizes="(max-width: 120px) 100vw, 120px"
+                  sizes="(max-width: 160px) 100vw, 160px"
                 />
               </div>
             </div>
-
+            
             {/* Video Info */}
             <div className="flex flex-col flex-1 py-1">
-              <h3 className="font-medium line-clamp-2 text-sm">
-                {video.title}
-              </h3>
+              <h3 className="font-medium line-clamp-2 text-sm">{video.title}</h3>
               {video.views && (
                 <span className="mt-1 text-xs text-neutral-600 dark:text-neutral-400">
                   {video.views}

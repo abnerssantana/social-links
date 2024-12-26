@@ -18,6 +18,7 @@ export interface GridItemInterface {
   icon?: string;
   description?: string;
   color?: string;
+  colorDark?: string;
   backgroundColor?: {
     light: string;
     dark: string;
@@ -55,6 +56,29 @@ const GridItems: GridItemInterface[] = [
     },
   },
   {
+    layout: "2x6",
+    type: "featured-videos",
+    title: "Vídeos em Destaque",
+    description: "Os melhores conteúdos do canal para você começar",
+    backgroundColor: {
+      light: "#FFF4F4",
+      dark: "#1F1F1F"
+    },
+  },
+  {
+    layout: "2x6",
+    type: "equipment",
+    title: "Conquistas e Recordes Pessoais",
+    description: "Evolução constante e dedicação aos treinos",
+    images: ["/2024/1.jpg", "/2024/2.jpg", "/2024/3.jpg", "/2024/4.jpg"],
+    equipments: [
+      { title: "5K - 14:27" },
+      { title: "10K - 30:49" },
+      { title: "21K - 1:11:23" },
+      { title: "42K - 2:30:44" },
+    ],
+  },
+  {
     layout: "2x2",
     type: "social",
     title: "Strava",
@@ -84,6 +108,21 @@ const GridItems: GridItemInterface[] = [
   {
     layout: "2x2",
     type: "social",
+    title: "Calculadora de Ritmos",
+    icon: "calc",
+    description: "Descubra seus ritmos ideais e zonas de frequência cardíaca para otimizar seus treinos de corrida.",
+    buttonTitle: "Calcular",
+    buttonLink: "https://magictraining.run/calculadora",
+    color: "#22c55e",
+    colorDark: "#399918",
+    backgroundColor: {
+      light: "#f0fdf4",
+      dark: "#16423C",
+    },
+  },
+  {
+    layout: "2x2",
+    type: "social",
     title: "Quer um site como este?",
     icon: "code",
     description: "Desenvolvimento de sites personalizados com design moderno e responsivo. Transforme sua presença online!",
@@ -95,19 +134,6 @@ const GridItems: GridItemInterface[] = [
       light: "#F0F9FF",
       dark: "#082F49",
     },
-  },
-  {
-    layout: "2x6",
-    type: "equipment",
-    title: "Conquistas e Recordes Pessoais",
-    description: "Evolução constante e dedicação aos treinos",
-    images: ["/2024/1.jpg", "/2024/2.jpg", "/2024/3.jpg", "/2024/4.jpg"],
-    equipments: [
-      { title: "5K - 14:27" },
-      { title: "10K - 30:49" },
-      { title: "21K - 1:11:23" },
-      { title: "42K - 2:30:44" },
-    ],
   },
   {
     layout: "2x6",
@@ -127,16 +153,6 @@ const GridItems: GridItemInterface[] = [
     ],
   },
   {
-    layout: "2x8",
-    type: "featured-videos",
-    title: "Vídeos em Destaque",
-    description: "Os melhores conteúdos do canal para você começar",
-    backgroundColor: {
-      light: "#FFF4F4",
-      dark: "#1F1F1F"
-    },
-  },
-  {
     layout: "1x6",
     type: "equipment",
     title: "Treino intervalado na pista",
@@ -151,36 +167,6 @@ const GridItems: GridItemInterface[] = [
     description: "Aprenda técnicas avançadas e melhore seu desempenho",
     images: ["/trirex.jpg"],
     buttonLink: "https://www.youtube.com/playlist?list=PLv-nnKVPAhbN6tgKCdE4u4eX313VvkUbV",
-  },
-  {
-    layout: "2x2",
-    type: "social",
-    title: "LinkedIn",
-    icon: "linkedin",
-    description: "Conecte-se comigo para oportunidades profissionais e networking. Infraestrutura e segurança de TI.",
-    buttonTitle: "Conectar",
-    buttonLink: "https://www.linkedin.com/in/abnerssantana",
-    buttonSecondaryText: "",
-    color: "#0077B5",
-    backgroundColor: {
-      light: "#E8F4F9",
-      dark: "#003E5E",
-    },
-  },
-  {
-    layout: "2x2",
-    type: "social",
-    title: "Instagram",
-    icon: "instagram",
-    description: "Acompanhe minha jornada diária nas corridas",
-    buttonTitle: "Seguir",
-    buttonLink: "https://www.instagram.com/abnerssantana/",
-    buttonSecondaryText: "@abnerssantana",
-    color: "rgb(109 40 217 / var(--tw-bg-opacity, 1))",
-    backgroundColor: {
-      light: "rgb(237 233 254 / var(--tw-bg-opacity, 1))",
-      dark: "rgb(196 181 253 / var(--tw-bg-opacity, 1))",
-    },
   },
   {
     layout: "2x4",
@@ -199,6 +185,38 @@ const GridItems: GridItemInterface[] = [
     ],
   },
   {
+    layout: "2x2",
+    type: "social",
+    title: "LinkedIn",
+    icon: "linkedin",
+    description: "Conecte-se comigo para oportunidades profissionais e networking. Infraestrutura e segurança de TI.",
+    buttonTitle: "Conectar",
+    buttonLink: "https://www.linkedin.com/in/abnerssantana",
+    buttonSecondaryText: "",
+    color: "#0077B5",
+    colorDark: "#4B70F5",
+    backgroundColor: {
+      light: "#E8F4F9",
+      dark: "#102C57",
+    },
+  },
+  {
+    layout: "2x2",
+    type: "social",
+    title: "Instagram",
+    icon: "instagram",
+    description: "Acompanhe minha jornada diária nas corridas",
+    buttonTitle: "Seguir",
+    buttonLink: "https://www.instagram.com/abnerssantana/",
+    buttonSecondaryText: "@abnerssantana",
+    color: "rgb(109 40 217 / var(--tw-bg-opacity, 1))",
+    colorDark: "#6D67E4",
+    backgroundColor: {
+      light: "rgb(237 233 254 / var(--tw-bg-opacity, 1))",
+      dark: "#392467",
+    },
+  },
+  {
     layout: "1x2",
     type: "social",
     title: "Discord",
@@ -208,9 +226,10 @@ const GridItems: GridItemInterface[] = [
     buttonLink: "https://discord.gg/pGcDZjhRry",
     buttonSecondaryText: "",
     color: "#3a0ca3",
+    colorDark: "#865DFF",
     backgroundColor: {
       light: "#c4c7ff",
-      dark: "#c4c7ff",
+      dark: "#191825",
     },
   },
   {
@@ -231,7 +250,7 @@ const GridItems: GridItemInterface[] = [
 
 export const siteConfig = {
   creator: "Abner Santana",
-  title: "Seu Alienígena Favorito ❤️👽✌️",
+  title: "Seu Alienígena Favorito 👽❤️✌️",
   bio: "Compartilhando conhecimento sobre corrida de rua, treinos e experiências. Do iniciante ao avançado, todos são bem-vindos nessa jornada!",
   location: "São José do Rio Preto - SP",
   timeweek: "Nascido em 1993 | 62kg | 1.80m",
