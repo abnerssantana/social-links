@@ -12,11 +12,11 @@ export function ThemeToggle() {
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
       <Sun
-        size="16"
+        size="18"
         className="transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0"
       />
       <Moon
-        size="16"
+        size="18"
         className="absolute transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100"
       />
       <span className="sr-only">Toggle theme</span>

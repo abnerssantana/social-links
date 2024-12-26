@@ -15,7 +15,6 @@ const PatternBackground = () => {
     [Timer, Footprints, Trophy, Medal],
     [Medal, Timer, Footprints, Trophy],
     [Trophy, Medal, Timer, Footprints],
-    [Footprints, Trophy, Medal, Timer],
   ];
 
   return (
@@ -26,7 +25,7 @@ const PatternBackground = () => {
           x="0"
           y="0"
           width="160"
-          height="200"
+          height="160"
           patternUnits="userSpaceOnUse"
         >
           {iconPattern.map((row, rowIndex) => (
@@ -38,7 +37,7 @@ const PatternBackground = () => {
                 >
                   <Icon
                     size={16}
-                    className={isDark ? "text-neutral-500" : "text-neutral-300"}
+                    className={isDark ? "text-neutral-500" : "text-neutral-400"}
                   />
                 </g>
               ))}

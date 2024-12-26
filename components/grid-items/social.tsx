@@ -2,7 +2,7 @@ import Link from "next/link";
 import Button from "../button";
 import { GridItemInterface } from "./../../config/site-config";
 import { IconType } from "react-icons";
-import { FaWhatsapp, FaInstagram, FaYoutube, FaDiscord, FaGithub, FaStrava, FaMagic } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaYoutube, FaDiscord, FaGithub, FaStrava, FaMagic, FaLinkedin, FaCode } from "react-icons/fa";
 
 const Social = ({ item }: { item: GridItemInterface }) => {
   const iconComponents: { [key: string]: IconType } = {
@@ -12,7 +12,9 @@ const Social = ({ item }: { item: GridItemInterface }) => {
     discord: FaDiscord,
     github: FaGithub,
     strava: FaStrava,
-    magic: FaMagic
+    magic: FaMagic,
+    linkedin: FaLinkedin,
+    code: FaCode,
   };
 
   const IconComponent = item.icon && iconComponents[item.icon];

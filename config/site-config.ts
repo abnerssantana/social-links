@@ -82,6 +82,21 @@ const GridItems: GridItemInterface[] = [
     color: "#0073cc",
   },
   {
+    layout: "2x2",
+    type: "social",
+    title: "Quer um site como este?",
+    icon: "code",
+    description: "Desenvolvimento de sites personalizados com design moderno e responsivo. Transforme sua presença online!",
+    buttonTitle: "Fale Comigo",
+    buttonLink: "https://api.whatsapp.com/send?phone=17992149963",
+    buttonSecondaryText: "",
+    color: "rgb(32, 72, 179)",
+    backgroundColor: {
+      light: "#F0F9FF",
+      dark: "#082F49",
+    },
+  },
+  {
     layout: "2x6",
     type: "equipment",
     title: "Conquistas e Recordes Pessoais",
@@ -107,7 +122,7 @@ const GridItems: GridItemInterface[] = [
     images: ["/loja/tshirt-1.jpg", "/loja/tshirt-2.jpg", "/loja/tshirt-3.jpg", "/loja/tshirt-4.jpg"],
     equipments: [
       { title: "Camisetas Exclusivas" },
-      { title: "Apoie o Projeto" },
+      { title: "Apoie o Magic" },
       { title: "Apoie o Canal" },
     ],
   },
@@ -117,6 +132,7 @@ const GridItems: GridItemInterface[] = [
     title: "Treino intervalado na pista",
     description: "O treino intervalado é uma abordagem eficaz para melhorar",
     video: "/pista.mov",
+    buttonLink: "https://www.youtube.com/watch?v=Uuv2waG18e8",
   },
   {
     layout: "1x6",
@@ -124,6 +140,22 @@ const GridItems: GridItemInterface[] = [
     title: "Dicas Valiosas de Treinamento",
     description: "Aprenda técnicas avançadas e melhore seu desempenho",
     images: ["/trirex.jpg"],
+    buttonLink: "https://www.youtube.com/playlist?list=PLv-nnKVPAhbN6tgKCdE4u4eX313VvkUbV",
+  },
+  {
+    layout: "2x2",
+    type: "social",
+    title: "LinkedIn",
+    icon: "linkedin",
+    description: "Conecte-se comigo para oportunidades profissionais e networking. Infraestrutura e segurança de TI.",
+    buttonTitle: "Conectar",
+    buttonLink: "https://www.linkedin.com/in/abnerssantana",
+    buttonSecondaryText: "",
+    color: "#0077B5",
+    backgroundColor: {
+      light: "#E8F4F9",
+      dark: "#003E5E",
+    },
   },
   {
     layout: "2x2",
@@ -141,6 +173,22 @@ const GridItems: GridItemInterface[] = [
     },
   },
   {
+    layout: "2x4",
+    type: "equipment",
+    buttonLink: "https://youtu.be/ZfGx3EaY0qs",
+    buttonSecondaryText: "",
+    color: "#65b741",
+    title: "Suplementos que eu uso",
+    description: "Suplementos que todo corredor precisa conhecer!",
+    images: ["/videos/suplementos.jpg"],
+    equipments: [
+      { title: "Creatina" },
+      { title: "BCAA" },
+      { title: "Beta-alanina" },
+      { title: "Hipercalórico" },
+    ],
+  },
+  {
     layout: "1x2",
     type: "social",
     title: "Discord",
@@ -156,7 +204,7 @@ const GridItems: GridItemInterface[] = [
     },
   },
   {
-    layout: "1x2",
+    layout: "1x2", 
     type: "social",
     title: "Github",
     icon: "github",
@@ -178,6 +226,6 @@ export const siteConfig = {
   location: "São José do Rio Preto - SP",
   timeweek: "Nascido em 1993 | 62kg | 1.80m",
   locationLink: "https://maps.app.goo.gl/SaoJoseDoRioPreto",
-  email: "contato@abnerssantana.com",
+  email: "abnerss@outlook.com",
   items: GridItems,
 } as const;

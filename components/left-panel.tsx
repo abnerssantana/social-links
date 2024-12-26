@@ -1,7 +1,7 @@
 "use client";
 
 import { siteConfig } from "@/config/site-config";
-import { MapPin, CalendarRange } from "lucide-react";
+import { MapPin, Mail, CalendarRange } from "lucide-react";
 import Image from "next/image";
 import Footer from "./footer";
 
@@ -51,6 +51,13 @@ const LeftPanel = () => {
             <MapPin size="14" />
             {siteConfig.location}
           </div>
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium bg-surface-light dark:bg-surface-dark border rounded-md border-border-light dark:border-border-dark hover:scale-[1.02] hover:shadow-lg"
+          >
+            <Mail size="14" />
+            E-mail
+          </a>
         </div>
         {/* Footer */}
         <div className="hidden mt-6 xl:flex">

@@ -39,9 +39,9 @@ const sfPRO = localFont({
   variable: "--font-sfpro",
 });
 
-const siteUrl = "https://dratati.vercel.app";
-const description = "Especialista em odontopediatria, dedicada a criar experiências positivas e sorrisos saudáveis. No consultório da Dra. Tatiana, cada atendimento é personalizado, combinando técnica moderna com um ambiente acolhedor, proporcionando aos pequenos pacientes um cuidado especial desde a primeira infância.";
-const title = "Abner Santana";
+const siteUrl = "http://links.magictraining.run";
+const description = "Compartilhando conhecimento sobre corrida de rua, treinos e experiências. Do iniciante ao avançado, todos são bem-vindos nessa jornada!";
+const title = "Abner Santana - Seu Alienígena Favorito!";
 
 export const metadata: Metadata = {
   title,
