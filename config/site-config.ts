@@ -6,8 +6,8 @@ export type GridItemLayout =
   | "2x4"
   | "2x6"
   | "2x8";
-export type GridItemType = "social" | "equipment" | "mentor" | "project";
-export type EqiupmentItem = {
+  export type GridItemType = "social" | "equipment" | "mentor" | "project" | "featured-videos";
+  export type EqiupmentItem = {
   title: string;
 };
 
@@ -125,6 +125,16 @@ const GridItems: GridItemInterface[] = [
       { title: "Apoie o Magic" },
       { title: "Apoie o Canal" },
     ],
+  },
+  {
+    layout: "2x8",
+    type: "featured-videos",
+    title: "Vídeos em Destaque",
+    description: "Os melhores conteúdos do canal para você começar",
+    backgroundColor: {
+      light: "#FFF4F4",
+      dark: "#1F1F1F"
+    },
   },
   {
     layout: "1x6",
