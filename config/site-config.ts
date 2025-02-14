@@ -249,7 +249,7 @@ const GridItems: GridItemInterface[] = [
 ];
 
 export const siteConfig = {
-  creator: "Abner Santana",
+  creator: "Michael Freitas Advogados",
   title: "Seu Alienígena Favorito 👽❤️✌️",
   bio: "Compartilhando conhecimento sobre corrida de rua, treinos e experiências. Do iniciante ao avançado, todos são bem-vindos nessa jornada!",
   location: "São José do Rio Preto - SP",

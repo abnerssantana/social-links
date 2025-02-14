@@ -15,7 +15,7 @@ const LeftPanel = () => {
       <div>
         <div>
           <Image
-            alt="Abner Santana"
+            alt="Michael Freitas Advogados"
             placeholder="blur"
             src="/avatar.jpg"
             width={140}
