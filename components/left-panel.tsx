@@ -17,10 +17,10 @@ const LeftPanel = () => {
           <Image
             alt="Michael Freitas Advogados"
             placeholder="blur"
-            src="/avatar.jpg"
+            src="/avatar.png"
             width={140}
             height={140}
-            blurDataURL="/avatar.jpg"
+            blurDataURL="/avatar.png"
             className="rounded-full"
           />
         </div>
