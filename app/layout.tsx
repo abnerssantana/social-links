@@ -41,7 +41,7 @@ const sfPRO = localFont({
 
 const siteUrl = "http://links.magictraining.run";
 const description = "Compartilhando conhecimento sobre corrida de rua, treinos e experiências. Do iniciante ao avançado, todos são bem-vindos nessa jornada!";
-const title = "Michael Freitas Advogados - Seu Alienígena Favorito!";
+const title = "Abner Santana - Seu Alienígena Favorito!";
 
 export const metadata: Metadata = {
   title,
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
         url: '/shared.png',
         width: 1200,
         height: 630,
-        alt: 'Michael Freitas Advogados',
+        alt: 'Abner Santana',
       },
     ],
     locale: 'pt_BR',
