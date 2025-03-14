@@ -6,7 +6,6 @@
   }
 }
 
-/* Common transition styles */
 .transition-opacity {
   transition-property: opacity;
   transition-duration: 0.6s;
@@ -17,8 +16,7 @@
   opacity: 0;
 }
 
-/* Custom color variables - accessible in both light and dark modes */
-:root {
+@theme {
   --color-primary: #FF5722;
   
   --color-background-light: #F5F5F5;
@@ -33,35 +31,49 @@
   --color-accent-primary: #FF5722;
   --color-accent-secondary: #1E88E5;
   --color-accent-tertiary: #212121;
+  
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  
+  --font-sans: var(--font-sfpro);
+  
+  --background-size-auto: auto;
+  --background-size-cover: cover;
+  --background-size-contain: contain;
+  --background-size-verySmall: 0.5rem;
+  --background-size-3: 3rem;
+  --background-size-2: 2rem;
+  --background-size-1: 1rem;
 }
 
-/* Tailwind 4 compatible utility classes for custom colors */
-@layer utilities {
-  .bg-background-light {
-    background-color: var(--color-background-light);
-  }
-  
-  .bg-background-dark {
-    background-color: var(--color-background-dark);
-  }
-  
-  .bg-surface-light {
-    background-color: var(--color-surface-light);
-  }
-  
-  .bg-surface-dark {
-    background-color: var(--color-surface-dark);
-  }
-  
-  .border-border-light {
-    border-color: var(--color-border-light);
-  }
-  
-  .border-border-dark {
-    border-color: var(--color-border-dark);
-  }
-  
-  .text-primary {
-    color: var(--color-primary);
-  }
+/* Custom Utilities */
+@utility border-border-light {
+  border-color: var(--color-border-light);
+}
+
+@utility border-border-dark {
+  border-color: var(--color-border-dark);
+}
+
+@utility bg-background-light {
+  background-color: var(--color-background-light);
+}
+
+@utility bg-background-dark {
+  background-color: var(--color-background-dark);
+}
+
+@utility bg-surface-light {
+  background-color: var(--color-surface-light);
+}
+
+@utility bg-surface-dark {
+  background-color: var(--color-surface-dark);
+}
+
+@utility text-primary {
+  color: var(--color-primary);
 }
