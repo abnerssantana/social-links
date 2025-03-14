@@ -1,11 +1,22 @@
-
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Timer, Trophy, Medal, Footprints } from 'lucide-react';
 import { useTheme } from "next-themes";
 
 const PatternBackground = () => {
   const { theme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  
+  // Only render after component is mounted on client
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  
+  // Return null during server-side rendering
+  if (!mounted) {
+    return null;
+  }
+  
   const currentTheme = theme === "system" ? systemTheme : theme;
   const isDark = currentTheme === "dark";
 
