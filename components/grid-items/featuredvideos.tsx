@@ -77,7 +77,7 @@ const FeaturedVideos = ({ item }: { item: GridItemInterface }) => {
             target="_blank"
           >
             {/* Thumbnail - proporção 16:9 */}
-            <div className="relative flex-shrink-0 w-28 sm:w-32 overflow-hidden rounded">
+            <div className="relative shrink-0 w-28 sm:w-32 overflow-hidden rounded-sm">
               <div className="pb-[56.25%]">
                 <Image
                   src={video.thumbnail}

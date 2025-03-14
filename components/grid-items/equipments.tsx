@@ -73,7 +73,7 @@ const ImageComparison: React.FC<Props> = ({ item }) => {
     if (item.video) {
       return (
         <div className={`relative flex flex-col items-end justify-end w-full ${containerHeight} overflow-hidden group`}>
-          <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-neutral-950/98 to-neutral-950/99" />
+          <div className="absolute inset-0 z-10 bg-linear-to-b from-transparent via-neutral-950/98 to-neutral-950/99" />
           <video
             ref={videoRef}
             className="absolute inset-0 z-0 w-full h-full object-cover"
