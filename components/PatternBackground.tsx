@@ -4,7 +4,7 @@ import { Timer, Trophy, Medal, Footprints } from 'lucide-react';
 import { useTheme } from "next-themes";
 
 const PatternBackground = () => {
-  const { theme, systemTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   
   // Only render after component is mounted on client
@@ -17,8 +17,7 @@ const PatternBackground = () => {
     return null;
   }
   
-  const currentTheme = theme === "system" ? systemTheme : theme;
-  const isDark = currentTheme === "dark";
+  const isDark = resolvedTheme === "dark";
 
   // Array fixo de ícones relacionados a corrida na ordem desejada
   const iconPattern = [
@@ -48,7 +47,7 @@ const PatternBackground = () => {
                 >
                   <Icon
                     size={16}
-                    className={isDark ? "text-neutral-500" : "text-neutral-400"}
+                    color={isDark ? "#6b7280" : "#9ca3af"} // Use explicit colors instead of Tailwind classes in SVG
                   />
                 </g>
               ))}
