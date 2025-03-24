@@ -1,5 +1,3 @@
-"use client";
-
 import { siteConfig } from "@/config/site-config";
 import { MapPin, Mail, CalendarRange } from "lucide-react";
 import Image from "next/image";
@@ -26,8 +24,8 @@ const LeftPanel = () => {
         </div>
         {/* Text Container with Glassmorphism */}
         <div className="relative my-6 p-6 rounded-xl overflow-hidden">
-          {/* Glassmorphism Background */}
-          <div className="absolute inset-0 backdrop-blur-xs bg-white/30 dark:bg-neutral-950/30" />
+          {/* Glassmorphism Background - FIXED: properly toggle between light/dark */}
+          <div className="absolute inset-0 backdrop-blur-xs bg-white/30 dark:bg-background-dark/30" />
           {/* Gradient Border */}
           <div className="absolute inset-0 rounded-xl border border-white/20 dark:border-neutral-800/20" />
           {/* Content */}

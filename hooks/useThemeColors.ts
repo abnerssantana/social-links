@@ -3,15 +3,14 @@ import { useState, useEffect } from "react";
 import { colors, colorSchemes, ThemeColor, getThemeColor } from "@/config/theme-config";
 
 export function useThemeColors() {
-  const { theme, systemTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   
   useEffect(() => {
     setMounted(true);
   }, []);
   
-  const currentTheme = theme === 'system' ? systemTheme : theme;
-  const isDark = currentTheme === "dark";
+  const isDark = mounted && resolvedTheme === "dark";
   
   // Get color for a theme color object
   const getColor = (themeColor: ThemeColor) => {
