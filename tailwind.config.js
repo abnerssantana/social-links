@@ -1,46 +1,71 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  // Otimização para content (removendo duplicações)
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}", // Mantenha apenas se estiver usando Pages Router
   ],
   darkMode: "class",
   theme: {
     extend: {
       colors: {
-        primary: "#FF5722",  // Laranja vibrante da camiseta
+        // Cores semânticas melhoradas
+        primary: {
+          DEFAULT: "#FF5722",
+          light: "#FF8A50",
+          dark: "#C41C00"
+        },
         background: {
-          light: "#F5F5F5",  // Fundo claro clean
-          dark: "#1A1A1A",   // Fundo escuro profundo
+          light: "#F5F5F5",
+          dark: "#1A1A1A"
         },
         surface: {
-          light: "#FFFFFF",  // Superfície clara
-          dark: "#2D2D2D",   // Superfície escura
+          light: "#FFFFFF",
+          dark: "#2D2D2D"
         },
         border: {
-          light: "#E0E0E0",  // Borda clara sutil
-          dark: "#404040",   // Borda escura suave
+          light: "#E0E0E0",
+          dark: "#404040"
         },
         accent: {
-          primary: "#FF5722",    // Laranja da camiseta
-          secondary: "#1E88E5",  // Azul das mangas
-          tertiary: "#212121",   // Preto do shorts
+          primary: "#FF5722",
+          secondary: "#1E88E5",
+          tertiary: "#212121",
+        },
+        // Adicionando estados hover/focus
+        state: {
+          hover: "rgba(255, 87, 34, 0.08)",
+          focus: "rgba(255, 87, 34, 0.12)"
         }
       },
+      // Configuração de fontes melhorada
       fontFamily: {
-        sans: ["var(--font-sfpro)"],
+        sans: ["var(--font-sfpro)", "system-ui", "sans-serif"], // Fallback adicionado
+        display: ["var(--font-sfpro)", "system-ui", "sans-serif"] // Opcional para títulos
       },
+      // Extensões de backgroundSize
       backgroundSize: {
-        auto: "auto",
-        cover: "cover",
-        contain: "contain",
         verySmall: "0.5rem",
-        3: "3rem",
-        2: "2rem",
-        1: "1rem",
+      },
+      // Novas utilidades
+      transitionProperty: {
+        height: "height",
+        spacing: "margin, padding",
+      },
+      // Suporte a container queries
+      containers: {
+        xs: "20rem",
+        sm: "24rem",
       }
     },
   },
-  plugins: [require("@tailwindcss/container-queries")],
+  plugins: [
+    require("@tailwindcss/container-queries"),
+    // Plugin adicional recomendado para variantes dark
+    function({ addVariant }) {
+      addVariant("hocus", ["&:hover", "&:focus"]);
+      addVariant("not-first", "&:not(:first-child)");
+    }
+  ],
 }

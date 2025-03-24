@@ -77,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className="h-full" lang="pt-BR" suppressHydrationWarning>
+    <html lang="pt-BR" className={sfPRO.className} suppressHydrationWarning>
       <body className={sfPRO.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="flex flex-col h-full">{children}</div>

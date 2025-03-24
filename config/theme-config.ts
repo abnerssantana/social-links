@@ -20,7 +20,7 @@ export type ThemeColor = {
     primary: "#FF5722",
     background: {
       light: "#F5F5F5",
-      dark: "#1A1A1A",
+      dark: "#000000",
     },
     surface: {
       light: "#FFFFFF",

@@ -1,9 +1,25 @@
+"use client";
+
 import { siteConfig } from "@/config/site-config";
-import { MapPin, Mail, CalendarRange } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
 import Footer from "./footer";
+import { FaCalendarAlt, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 const LeftPanel = () => {
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  
+  // Apenas montamos o componente depois que o cliente carrega para evitar problemas de hidratação
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Verificar se estamos no modo escuro
+  const isDarkMode = mounted && (resolvedTheme === "dark");
+
   return (
     <div
       key="left-panel"
@@ -14,51 +30,87 @@ const LeftPanel = () => {
         <div>
           <Image
             alt="Abner Santana"
-            placeholder="blur"
             src="/avatar.jpg"
             width={140}
             height={140}
-            blurDataURL="/avatar.jpg"
+            priority
             className="rounded-full"
           />
         </div>
-        {/* Text Container with Glassmorphism */}
+        
+        {/* Text Container com Glassmorphism */}
         <div className="relative my-6 p-6 rounded-xl overflow-hidden">
-          {/* Glassmorphism Background - FIXED: properly toggle between light/dark */}
-          <div className="absolute inset-0 backdrop-blur-xs bg-white/30 dark:bg-background-dark/30" />
+          {/* Glassmorphism Background */}
+          <div 
+            className={`absolute inset-0 backdrop-blur-sm ${
+              isDarkMode 
+                ? "bg-neutral-900/50" 
+                : "bg-white/30"
+            }`} 
+          />
+          
           {/* Gradient Border */}
-          <div className="absolute inset-0 rounded-xl border border-white/20 dark:border-neutral-800/20" />
+          <div 
+            className={`absolute inset-0 rounded-xl border ${
+              isDarkMode 
+                ? "border-neutral-800/10" 
+                : "border-white/20"
+            }`} 
+          />
+          
           {/* Content */}
           <div className="relative">
             <div className="text-base font-medium text-primary">
               {siteConfig.title}
             </div>
-            <h1 className="my-2 text-4xl font-bold">{siteConfig.creator}</h1>
-            <p className="text-1xl font-light text-neutral-600 dark:text-slate-200">
+            <h1 className="my-2 text-4xl font-bold">
+              {siteConfig.creator}
+            </h1>
+            <p className={`text-1xl font-light ${
+              isDarkMode 
+                ? "text-slate-200" 
+                : "text-neutral-600"
+            }`}>
               {siteConfig.bio}
             </p>
           </div>
         </div>
+        
         {/* Buttons Container */}
         <div className="flex flex-col gap-3 mt-6">
-          <div className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium bg-surface-light dark:bg-surface-dark border rounded-md border-border-light dark:border-border-dark">
-            <CalendarRange size="14" />
+          <div className={`flex items-center w-full gap-2 px-4 py-2 text-sm font-medium border rounded-md ${
+            isDarkMode 
+              ? "bg-surface-dark border-border-dark" 
+              : "bg-surface-light border-border-light"
+          }`}>
+            <FaCalendarAlt size={14} className="text-primary" />
             {siteConfig.timeweek}
           </div>
-          <div className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium bg-surface-light dark:bg-surface-dark border rounded-md border-border-light dark:border-border-dark">
-            <MapPin size="14" />
+          
+          <div className={`flex items-center w-full gap-2 px-4 py-2 text-sm font-medium border rounded-md ${
+            isDarkMode 
+              ? "bg-surface-dark border-border-dark" 
+              : "bg-surface-light border-border-light"
+          }`}>
+            <FaMapMarkerAlt size={14} className="text-primary" />
             {siteConfig.location}
           </div>
-          <a
+          
+          <Link
             href={`mailto:${siteConfig.email}`}
-            className="flex items-center w-full gap-2 px-4 py-2 text-sm font-medium bg-surface-light dark:bg-surface-dark border rounded-md border-border-light dark:border-border-dark hover:scale-[1.02] hover:shadow-lg"
+            className={`flex items-center w-full gap-2 px-4 py-2 text-sm font-medium border rounded-md hover:scale-[1.02] hover:shadow-lg transition-transform ${
+              isDarkMode 
+                ? "bg-surface-dark border-border-dark" 
+                : "bg-surface-light border-border-light"
+            }`}
           >
-            <Mail size="14" />
+            <FaEnvelope size={14} className="text-primary" />
             E-mail
-          </a>
+          </Link>
         </div>
+        
         {/* Footer */}
-        <div className="hidden mt-6 xl:flex">
+        <div className="hidden mt-6 xl:block">
           <Footer />
         </div>
       </div>
