@@ -1,13 +1,10 @@
-export type GridItemLayout =
-  | "1x2"
-  | "1x6"
-  | "2x1"
-  | "2x2"
-  | "2x4"
-  | "2x6"
-  | "2x8";
-  export type GridItemType = "social" | "equipment" | "mentor" | "project" | "featured-videos";
-  export type EqiupmentItem = {
+import { ThemeColor } from "@/config/theme-config";
+import { SocialIconName, ProjectIconName } from "@/config/icons-config";
+
+export type GridItemLayout = "1x2" | "1x6" | "2x1" | "2x2" | "2x4" | "2x6" | "2x8";
+export type GridItemType = "social" | "equipment" | "mentor" | "project" | "featured-videos";
+
+export type EquipmentItem = {
   title: string;
 };
 
@@ -19,10 +16,8 @@ export interface GridItemInterface {
   description?: string;
   color?: string;
   colorDark?: string;
-  backgroundColor?: {
-    light: string;
-    dark: string;
-  };
+  backgroundColor?: ThemeColor;
+  colorScheme?: string; // Reference to a predefined color scheme
   buttonTitle?: string;
   buttonLink?: string;
   buttonSecondaryText?: string;
@@ -30,7 +25,7 @@ export interface GridItemInterface {
   price?: string;
   oldPrice?: string;
   stars?: number;
-  equipments?: EqiupmentItem[];
+  equipments?: EquipmentItem[];
   image?: string;
   images?: string[];
   video?: string;
@@ -46,14 +41,10 @@ const GridItems: GridItemInterface[] = [
     username: "@abnerssantana",
     description:
       "Dicas valiosas de treinamento, orientações práticas e insights sobre como melhorar seu desempenho na corrida, além de informações sobre como se preparar e ter sucesso em provas de corrida.",
-    color: "#FF0000",
+    colorScheme: "youtube", // Using predefined scheme
     buttonTitle: "Inscreva-se",
     buttonLink: "https://www.youtube.com/@abnerssantana",
     buttonSecondaryText: "5.6K",
-    backgroundColor: {
-      light: "rgb(255, 240, 240)",
-      dark: "rgb(23, 23, 23)",
-    },
   },
   {
     layout: "2x6",
@@ -87,11 +78,7 @@ const GridItems: GridItemInterface[] = [
     buttonTitle: "Seguir",
     buttonLink: "https://strava.com/athletes/abnerssantana",
     buttonSecondaryText: "@abnerssantana",
-    color: "#FF5722",
-    backgroundColor: {
-      light: "#FBE9E7",
-      dark: "#391a04",
-    },
+    colorScheme: "strava", // Using predefined scheme
   },
   {
     layout: "2x2",
@@ -100,10 +87,10 @@ const GridItems: GridItemInterface[] = [
     description:
       "Transforme sua corrida com planos de treinamento gratuitos e personalizados, que combinam ciência e experiência.",
     icon: "magic",
+    colorScheme: "magic", // Using predefined scheme
     buttonTitle: "Acessar",
     buttonLink: "https://magictraining.run",
     buttonSecondaryText: "",
-    color: "#0073cc",
   },
   {
     layout: "2x2",
@@ -111,14 +98,9 @@ const GridItems: GridItemInterface[] = [
     title: "Calculadora de Ritmos",
     icon: "calc",
     description: "Descubra seus ritmos ideais e zonas de frequência cardíaca para otimizar seus treinos de corrida.",
+    colorScheme: "calc", // Using predefined scheme
     buttonTitle: "Calcular",
     buttonLink: "https://magictraining.run/calculadora",
-    color: "#22c55e",
-    colorDark: "#399918",
-    backgroundColor: {
-      light: "#f0fdf4",
-      dark: "#16423C",
-    },
   },
   {
     layout: "2x2",
@@ -126,95 +108,22 @@ const GridItems: GridItemInterface[] = [
     title: "Quer um site como este?",
     icon: "code",
     description: "Desenvolvimento de sites personalizados com design moderno e responsivo. Transforme sua presença online!",
+    colorScheme: "code", // Using predefined scheme
     buttonTitle: "Fale Comigo",
     buttonLink: "https://api.whatsapp.com/send?phone=17992149963",
     buttonSecondaryText: "",
-    color: "rgb(32, 72, 179)",
-    backgroundColor: {
-      light: "#F0F9FF",
-      dark: "#082F49",
-    },
   },
-  {
-    layout: "2x6",
-    type: "equipment",
-    icon: "shop",
-    buttonTitle: "Comprar Agora",
-    buttonLink: "https://www.vivendoacorrida.com",
-    buttonSecondaryText: "",
-    color: "#65b741",
-    title: "Loja Vivendo a Corrida",
-    description: "Corra com estilo e ajude a manter meu trabalho!",
-    images: ["/loja/tshirt-1.jpg", "/loja/tshirt-2.jpg", "/loja/tshirt-3.jpg", "/loja/tshirt-4.jpg"],
-    equipments: [
-      { title: "Camisetas Exclusivas" },
-      { title: "Apoie o Magic" },
-      { title: "Apoie o Canal" },
-    ],
-  },
-  {
-    layout: "1x6",
-    type: "equipment",
-    title: "Treino intervalado na pista",
-    description: "O treino intervalado é uma abordagem eficaz para melhorar",
-    video: "/pista.mov",
-    buttonLink: "https://www.youtube.com/watch?v=Uuv2waG18e8",
-  },
-  {
-    layout: "1x6",
-    type: "equipment",
-    title: "Dicas Valiosas de Treinamento",
-    description: "Aprenda técnicas avançadas e melhore seu desempenho",
-    images: ["/trirex.jpg"],
-    buttonLink: "https://www.youtube.com/playlist?list=PLv-nnKVPAhbN6tgKCdE4u4eX313VvkUbV",
-  },
-  {
-    layout: "2x4",
-    type: "equipment",
-    buttonLink: "https://youtu.be/ZfGx3EaY0qs",
-    buttonSecondaryText: "",
-    color: "#65b741",
-    title: "Suplementos que eu uso",
-    description: "Suplementos que todo corredor precisa conhecer!",
-    images: ["/videos/suplementos.jpg"],
-    equipments: [
-      { title: "Creatina" },
-      { title: "BCAA" },
-      { title: "Beta-alanina" },
-      { title: "Hipercalórico" },
-    ],
-  },
-  {
-    layout: "2x2",
-    type: "social",
-    title: "LinkedIn",
-    icon: "linkedin",
-    description: "Conecte-se comigo para oportunidades profissionais e networking. Infraestrutura e segurança de TI.",
-    buttonTitle: "Conectar",
-    buttonLink: "https://www.linkedin.com/in/abnerssantana",
-    buttonSecondaryText: "",
-    color: "#0077B5",
-    colorDark: "#4B70F5",
-    backgroundColor: {
-      light: "#E8F4F9",
-      dark: "#102C57",
-    },
-  },
+  /* Additional items would go here */
   {
     layout: "2x2",
     type: "social",
     title: "Instagram",
     icon: "instagram",
     description: "Acompanhe minha jornada diária nas corridas",
+    colorScheme: "instagram", // Using predefined scheme
     buttonTitle: "Seguir",
     buttonLink: "https://www.instagram.com/abnerssantana/",
     buttonSecondaryText: "@abnerssantana",
-    color: "rgb(109 40 217 / var(--tw-bg-opacity, 1))",
-    colorDark: "#6D67E4",
-    backgroundColor: {
-      light: "rgb(237 233 254 / var(--tw-bg-opacity, 1))",
-      dark: "#392467",
-    },
   },
   {
     layout: "1x2",
@@ -222,15 +131,10 @@ const GridItems: GridItemInterface[] = [
     title: "Discord",
     icon: "discord",
     username: "vivendo a corrida",
+    colorScheme: "discord", // Using predefined scheme
     buttonTitle: "Conectar",
     buttonLink: "https://discord.gg/pGcDZjhRry",
     buttonSecondaryText: "",
-    color: "#3a0ca3",
-    colorDark: "#865DFF",
-    backgroundColor: {
-      light: "#c4c7ff",
-      dark: "#191825",
-    },
   },
   {
     layout: "1x2", 
@@ -238,13 +142,9 @@ const GridItems: GridItemInterface[] = [
     title: "Github",
     icon: "github",
     username: "@abnerssantana",
+    colorScheme: "github", // Using predefined scheme
     buttonTitle: "Seguir",
     buttonLink: "https://github.com/abnerssantana",
-    color: "#070707",
-    backgroundColor: {
-      light: "#dee2e6",
-      dark: "#323232",
-    },
   },
 ];
 

@@ -1,15 +1,10 @@
 import { GridItemInterface } from "@/config/site-config";
-import { Baby, Heart, ContactRound, Cake, LucideIcon } from "lucide-react";
-
-const iconMap: { [key: string]: LucideIcon } = {
-  baby: Baby,
-  contact: ContactRound,
-  heart: Heart,
-  cake: Cake,
-};
+import { projectIcons } from "@/config/icons-config";
+import { useThemeColors } from "@/hooks/useThemeColors";
 
 const Project = ({ item }: { item: GridItemInterface }) => {
-  const IconComponent = item.icon && iconMap[item.icon] ? iconMap[item.icon] : null;
+  const { isDark } = useThemeColors();
+  const IconComponent = item.icon && projectIcons[item.icon];
   
   return (
     <div className="flex items-center justify-between gap-4 pb-2">

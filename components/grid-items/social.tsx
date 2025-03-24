@@ -1,37 +1,14 @@
 import Link from "next/link";
 import Button from "../button";
 import { GridItemInterface } from "@/config/site-config";
-import { IconType } from "react-icons";
-import { useTheme } from "next-themes";
-import { 
-  FaWhatsapp, FaInstagram, FaYoutube, FaDiscord, FaGithub, 
-  FaStrava, FaMagic, FaLinkedin, FaCode, FaCalculator 
-} from "react-icons/fa";
+import { useThemeColors } from "@/hooks/useThemeColors";
+import { socialIcons } from "@/config/icons-config";
 
 const Social = ({ item }: { item: GridItemInterface }) => {
-  const { theme, systemTheme } = useTheme();
-  const currentTheme = theme === 'system' ? systemTheme : theme;
-  const isDark = currentTheme === "dark";
-
-  const iconComponents: { [key: string]: IconType } = {
-    whatsapp: FaWhatsapp,
-    instagram: FaInstagram,
-    youtube: FaYoutube,
-    discord: FaDiscord,
-    github: FaGithub,
-    strava: FaStrava,
-    magic: FaMagic,
-    linkedin: FaLinkedin,
-    code: FaCode,
-    calc: FaCalculator
-  };
-
-  const IconComponent = item.icon && iconComponents[item.icon];
-
-  const getThemeColor = (color?: string, colorDark?: string) => {
-    if (!color) return "#fff";
-    return isDark && colorDark ? colorDark : color;
-  };
+  const { getItemColor } = useThemeColors();
+  
+  // Get the appropriate icon component from our centralized system
+  const IconComponent = item.icon && socialIcons[item.icon];
 
   return (
     <Link href={item.buttonLink ?? ""} target="_blank">
@@ -39,7 +16,7 @@ const Social = ({ item }: { item: GridItemInterface }) => {
       <div className="flex items-center justify-between">
         {item.icon && IconComponent && (
           <IconComponent
-            color={getThemeColor(item.color, item.colorDark)}
+            color={getItemColor(item)}
             style={{ fontSize: "34px" }}
           />
         )}
@@ -47,7 +24,7 @@ const Social = ({ item }: { item: GridItemInterface }) => {
           <Button
             text={item.buttonTitle ?? ""}
             secondaryText={item.buttonSecondaryText}
-            color={getThemeColor(item.color, item.colorDark)}
+            color={getItemColor(item)}
           />
         )}
       </div>
@@ -66,7 +43,7 @@ const Social = ({ item }: { item: GridItemInterface }) => {
             <Button
               text={item.buttonTitle ?? ""}
               secondaryText={item.buttonSecondaryText}
-              color={getThemeColor(item.color, item.colorDark)}
+              color={getItemColor(item)}
             />
           </div>
         )}

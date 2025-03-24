@@ -2,8 +2,8 @@
 import { cn } from "@/utils/cn";
 import { cva, type VariantProps } from "class-variance-authority";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useThemeColors } from "@/hooks/useThemeColors";
+import { GridItemInterface } from "@/config/site-config";
 
 const variants = cva(
   "rounded-xl border flex flex-col justify-center @container transition-all duration-300",
@@ -28,30 +28,17 @@ const variants = cva(
 export type GridItemProps = {
   children: React.ReactNode;
   index: number;
-  backgroundColor?: {
-    light: string;
-    dark: string;
-  };
+  item: GridItemInterface;
 } & VariantProps<typeof variants>;
 
-const GridItem = ({ size, children, backgroundColor }: GridItemProps) => {
-  const { theme, systemTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const currentTheme = theme === 'system' ? systemTheme : theme;
-  const isDark = currentTheme === "dark";
+const GridItem = ({ size, children, item, index }: GridItemProps) => {
+  const { isDark, mounted, getItemBackground } = useThemeColors();
 
   if (!mounted) {
     return null;
   }
 
-  const bgColor = backgroundColor
-    ? (isDark ? backgroundColor.dark : backgroundColor.light)
-    : (isDark ? "rgb(23, 23, 23)" : "rgb(245 245 245 / var(--tw-bg-opacity, 1))");
+  const bgColor = getItemBackground(item);
 
   return (
     <div

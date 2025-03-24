@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { Timer, Trophy, Medal, Footprints } from 'lucide-react';
 import { useTheme } from "next-themes";
+import { patternIcons } from '@/config/icons-config';
 
 const PatternBackground = () => {
   const { resolvedTheme } = useTheme();
@@ -19,14 +19,6 @@ const PatternBackground = () => {
   
   const isDark = resolvedTheme === "dark";
 
-  // Array fixo de ícones relacionados a corrida na ordem desejada
-  const iconPattern = [
-    [Footprints, Trophy, Medal, Timer],
-    [Timer, Footprints, Trophy, Medal],
-    [Medal, Timer, Footprints, Trophy],
-    [Trophy, Medal, Timer, Footprints],
-  ];
-
   return (
     <div className="fixed inset-0 z-0 w-full h-full pointer-events-none">
       <svg width="100%" height="100%" className="opacity-30">
@@ -38,7 +30,7 @@ const PatternBackground = () => {
           height="160"
           patternUnits="userSpaceOnUse"
         >
-          {iconPattern.map((row, rowIndex) => (
+          {patternIcons.map((row, rowIndex) => (
             <g key={rowIndex}>
               {row.map((Icon, colIndex) => (
                 <g
@@ -47,7 +39,7 @@ const PatternBackground = () => {
                 >
                   <Icon
                     size={16}
-                    color={isDark ? "#6b7280" : "#9ca3af"} // Use explicit colors instead of Tailwind classes in SVG
+                    color={isDark ? "#6b7280" : "#9ca3af"}
                   />
                 </g>
               ))}
