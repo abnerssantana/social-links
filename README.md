@@ -17,25 +17,54 @@ A modern portfolio website built with Next.js 14, featuring a Bento grid design 
 
 ## Tech Stack
 
-- Next.js 14
+- Next.js 15
 - TypeScript
-- Tailwind CSS
+- Tailwind CSS 4
 - Framer Motion
 - Lucide React
 - next-themes
 - class-variance-authority
 
-## Project Structure
+# Project Structure
 
 ```
+bento-portfolio/
+├── app/
+│   ├── globals.css           # Global styles and CSS variables
+│   ├── layout.tsx            # Root layout with theme provider
+│   └── page.tsx              # Home page component
 ├── components/
-│   ├── grid-items/    # Bento grid components
-│   ├── theme/         # Theme management
-│   └── layout/        # Layout components
+│   ├── common/
+│   │   ├── Button.tsx        # Reusable button component
+│   │   └── Icon.tsx          # Icon component using react-icons
+│   ├── grid/
+│   │   ├── Grid.tsx          # Main grid component
+│   │   ├── GridItem.tsx      # Individual grid item component
+│   │   └── GridItemRenderer.tsx  # Renders correct component by type
+│   ├── grid-items/           # Different types of grid content
+│   │   ├── LinkItem.tsx
+│   │   ├── MediaItem.tsx     # For images/galleries
+│   │   ├── ProjectItem.tsx   # For project showcases
+│   │   ├── SocialItem.tsx    # For social media links
+│   │   └── VideoItem.tsx     # For video content
+│   ├── layout/
+│   │   ├── Footer.tsx        # Footer with copyright and theme toggle
+│   │   ├── LeftPanel.tsx     # Profile information panel
+│   │   └── PatternBackground.tsx  # Decorative background pattern
+│   └── theme/
+│       ├── ThemeProvider.tsx # Theme context provider
+│       └── ThemeToggle.tsx   # Light/dark mode toggle
 ├── config/
-│   └── site-config.ts # Site configuration
-└── styles/
-    └── globals.css    # Global styles
+│   ├── config-types.ts       # TypeScript interfaces for configuration
+│   └── site-config.ts        # Main site configuration file
+├── utils/
+│   └── cn.ts                 # Utility for merging Tailwind classes
+├── .gitignore
+├── next.config.js
+├── package.json
+├── postcss.config.js
+├── README.md
+└── tailwind.config.js
 ```
 
 ## Configuration
